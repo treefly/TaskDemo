@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #email-box {
+            width: 700px;
+            padding: 30px;
+        }
+
+        .base-mess>* {
+            margin-bottom: 10px;
+        }
+
+        .email-mess>* {
+            margin-bottom: 10px;
+        }
+
+        .email-mess,
+        .email-down {
+            margin-top: 10px;
+        }
+
+        .email-top {
+            margin-top: 20px;
+        }
+
+        .email-down>* {
+            margin-bottom: 20px;
+        }
+
+        .email-down>.down-underLine {
+            text-decoration: underline;
+        }
+
+        .contain p {
+            font-size: 16px;
+            font-family: Calibri;
+            color: black;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="email-box" class="contain">
+    <p>Hi %s</p>
+    <br>
+    <p>%s is inviting you to attend a dynaConnect meeting.</p>
+    <p>[Topic] %s</p>
+    <p>[Time] %s</p>
+    <p>[Invitation code] %s</p>
+    <p>[Description] %s</p>
+    <p>You can join the meeting from Windows, iOS or Android.</p>
+    <p>Application installation package can be get from below links:</p>
+    <div class="email-down" style="font-size:16px">
+        <a href="http://%s">Windows (local),</a>
+        <a href="http://%s">Android (local),</a>
+        <a href="%s">Android (Google Play),</a>
+        <a href="%s">iOS (Apple Store)</a>
+    </div>
+    <br>
+    <p>Thanks!</p>
+    <p>dynaConnect Team</p>
+</div>
+</body>
+
+</html>

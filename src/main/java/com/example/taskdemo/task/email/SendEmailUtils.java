@@ -1,5 +1,6 @@
 package com.example.taskdemo.task.email;
 
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -13,22 +14,25 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-
+@Data
 @Component
 public class SendEmailUtils {
 
     // 指定发件人电子邮箱
-    //@Value("${mail.sender}")
-    private static String from = "609722031@qq.com";
+    @Value("${mail.sender}")
+    private  String from;
+    //private static String from = "609722031@qq.com";
     // 指定发送邮件的主机为
-    //@Value("${mail-server}")
-    private static String host = "smtp.qq.com";
+    @Value("${server}")
+    private  String host;
+    //private static String host = "smtp.qq.com";
     //指定授权码
-    //@Value("${mail.accredit-code}")
-    private static String accreditCode ="ijokzkgtjhqjbdgc";
+    @Value("${mail.accredit-code}")
+    private  String accreditCode;
+    //private static String accreditCode ="ijokzkgtjhqjbdgc";
 
 
-    private static String content ="<!DOCTYPE html>\n" +
+    private String content ="<!DOCTYPE html>\n" +
             "<html lang=\"en\">\n" +
             "\n" +
             "<head>\n" +
@@ -105,7 +109,7 @@ public class SendEmailUtils {
             "\n" +
             "</html>";
 
-    public static void MailInfo(Map params) throws Exception {
+    public  void MailInfo(Map params) throws Exception {
         /** 1、邮箱必要信息初始化 **/
         // 收件人电子邮箱
         String to = params.get("mailhost").toString();
@@ -171,11 +175,7 @@ public class SendEmailUtils {
     }
 
     public static void main(String[] args) throws Exception {
-        Map map = new HashMap();
-        map.put("mailhost","hailun.zhang@dbh.dynabook.com");
-        map.put("content","欢迎使用任务协同系统！");
-        map.put("sw",true);
-        MailInfo(map);
+
     }
 
 }
